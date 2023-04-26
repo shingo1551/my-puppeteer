@@ -2,13 +2,14 @@ import puppeteer from 'puppeteer';
 
 (async () => {
   // const browser = await puppeteer.launch();
-  const browser = await puppeteer.launch({headless: 'new'});
+  // const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
 
   await page.goto('https://developer.chrome.com/');
 
   // Set screen size
-  await page.setViewport({width: 1080, height: 1024});
+  await page.setViewport({ width: 1080, height: 1024 });
 
   // Type into search box
   await page.type('.search-box__input', 'automate beyond recorder');
